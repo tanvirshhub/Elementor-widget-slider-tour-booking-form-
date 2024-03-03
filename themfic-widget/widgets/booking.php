@@ -189,6 +189,10 @@ class Elementor_booking_Widget extends \Elementor\Widget_Base
                 <label for="children"><?php echo esc_html($settings['children_label']); ?></label>
                 <input type="number" id="children" name="children" min="0" required>
             </div>
+            <div class="single-items">
+                <label for="children"><?php echo esc_html($settings['children_label']); ?></label>
+                <input type="number" id="children" name="children" min="0" required>
+            </div>
             <button type="submit"><?php echo esc_html($settings['button_text']); ?> <i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
 <?php

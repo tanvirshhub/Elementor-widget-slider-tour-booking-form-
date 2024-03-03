@@ -1,3 +1,25 @@
 form#booking-form {
   display: flex;
+  gap: 5px;
+}
+form#booking-form .single-items input {
+  background: #2051F5;
+  border: none;
+  padding: 5px;
+  width: 80%;
+}
+form#booking-form .input-group {
+  position: relative;
+}
+form#booking-form .input-group i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px; /* Adjust this value based on your design */
+}
+form#booking-form button {
+  width: 25%;
+  border: none;
+  padding: 0px 5px;
+  border-radius: 5px;
 }/*# sourceMappingURL=main.css.map */
