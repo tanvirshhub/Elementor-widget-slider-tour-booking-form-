@@ -148,6 +148,37 @@ class Elementor_Slider_Widget extends \Elementor\Widget_Base
         );
 
         $this->end_controls_section();
+        // Add Style Controls
+        $this->start_controls_section(
+            'section_style',
+            [
+                'label' => esc_html__('Slider Styles', 'themefic_widget'),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+            ]
+        );
+
+        $this->add_control(
+            'slider_height',
+            [
+                'label' => esc_html__('Slider Height', 'themefic_widget'),
+                'type' => \Elementor\Controls_Manager::SLIDER,
+                'selectors' => [
+                    '{{WRAPPER}} .slick-slide' => 'height: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'overlay_opacity',
+            [
+                'label' => esc_html__('Overlay Opacity', 'themefic_widget'),
+                'type' => \Elementor\Controls_Manager::SLIDER,
+                'selectors' => [
+                    '{{WRAPPER}} .slick-slide .overlay' => 'opacity: {{SIZE}};',
+                ],
+            ]
+        );
+        $this->end_controls_section();
     }
 
     protected function render()
@@ -160,11 +191,8 @@ class Elementor_Slider_Widget extends \Elementor\Widget_Base
                     <?php if (!empty($slide['image']['url'])) : ?>
                         <div class="slide-image" style="background-image: url('<?php echo esc_url($slide['image']['url']); ?>');">
                             <div class="overlay" style="background-color: <?php echo esc_attr($slide['overlay_color']); ?>;"></div>
-                        </div>
-                    <?php endif; ?>
-
-                    <h3><?php echo esc_html($slide['subheading']); ?></h3>
-                    <h2><?php echo esc_html($slide['main_heading']); ?></h2>
+                            <h3><?php echo esc_html($slide['subheading']); ?></h3>
+                    <h1><?php echo esc_html($slide['main_heading']); ?></h1>
                     <ul class="icon-list">
                         <?php foreach ($slide['icon_list'] as $item) : ?>
                             <li>
@@ -179,9 +207,12 @@ class Elementor_Slider_Widget extends \Elementor\Widget_Base
                         <div class="share-icons"><?php echo $slide['share_icons']['value']; ?></div>
                     <?php endif; ?>
 
-                    <button class="before-button"><?php echo esc_html($slide['before_button_text']); ?></button>
-                    <button class="next-button"><?php echo esc_html($slide['next_button_text']); ?></button>
+                    
+                    </div>
+                    <?php endif; ?>
                 </div>
+
+
             <?php endforeach; ?>
         </div>
 <?php

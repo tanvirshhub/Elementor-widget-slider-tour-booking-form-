@@ -24,3 +24,33 @@ form#booking-form {
     }
 
 }
+
+.slide-image {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 500px;
+    height: 100vh;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    a.your-button-class {
+        background: #FA6400;
+        padding: 10px;
+        border-radius: 20px;
+        color: white;
+    }
+    ul.icon-list {
+        position: absolute;
+        display: flex;
+        left: -24px;
+        gap: 16px;
+        transform: rotate(90deg);
+    }
+}

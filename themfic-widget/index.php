@@ -34,7 +34,9 @@ function register_widget_styles()
 	wp_enqueue_style('mainstyle', plugins_url('assets/css/main.css', __FILE__), array(), '1.0.0');
 	wp_enqueue_style('slick-for-plugin', plugins_url('assets/css/slick.css', __FILE__), array(), '1.0.0');
 
-	wp_enqueue_script('jquery', '//code.jquery.com/jquery-2.2.0.min.js', array(), '1.0.0', true);
+	wp_enqueue_style('slick-for-theme', plugins_url('assets/css/slick-theme.css', __FILE__), array(), '1.0.0');
+	
+	wp_enqueue_script('jquery-for-plugin', '//code.jquery.com/jquery-2.2.0.min.js', array(), '1.0.0', true);
 
 	wp_enqueue_script('slickforplugin', plugins_url('assets/js/slick.min.js', __FILE__), array('jquery'), '1.0.0', true);
 	wp_enqueue_script('mainscriptforplugin', plugins_url('assets/js/main.js', __FILE__), array('jquery'), '1.0.0', true);
